@@ -1,0 +1,63 @@
+#app {
+  margin-top: 0px;
+}
+
+element.style {
+}
+button.v-btn {
+    border: 1px solid;
+}
+button.btn.active{background-color: #b9b9b9;color:#fff;}
+.tabs {
+  margin-top: 20px;
+}
+.tabs ul {
+  align-items: center;
+  border-bottom-color: #dbdbdb;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  display: flex;
+  flex-grow: 1;
+  flex-shrink: 0;
+  justify-content: flex-start;
+}
+.tabs li {
+display: block;
+}
+.tabs li.is-active a {
+border-bottom-color: #3273dc;
+color: #3273dc;
+}
+.tabs li a:hover {
+cursor: pointer;
+}
+button.active{background:red;color:#fff;}
+
+.rotation-animation {
+  animation: div-rotate 0.7s infinite steps(8);
+  transform: translateZ(0);
+  transform-origin: 50% 50%;
+}
+
+@keyframes div-rotate {
+    0% { transform: rotate(  0deg) scale(0.1);}
+  100% { transform: rotate(360deg) scale(0.1);}
+}
+
+.small {
+font-size: 150px;
+margin: -59px;
+color: red;
+}
+.large {
+font-size: 300px;
+margin: -140px;
+}
+.midimum-large {
+font-size: 400px;
+margin: -180px;
+}
+.very-large {
+font-size: 500px;
+margin: -230px;
+}

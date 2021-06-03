@@ -1,0 +1,14 @@
+https://gist.github.com/ChinwalPrasad/c60b9fed53218694623b9b75af679875
+https://morioh.com/p/2aaa2330ca54
+
+
+https://www.sitepoint.com/php-authorization-jwt-json-web-tokens/
+
+
+
+https://packagist.org/packages/lindelius/php-jwt
+
+
+
+
+https://github.com/cdoco/php-jwt

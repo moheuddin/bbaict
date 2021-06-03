@@ -1,0 +1,16 @@
+{
+  "name": "moheuddin/php-project",
+  "description": "A PHP project.",
+  "keywords": ["php", "program", "vue"],
+  "license": "MIT",
+  "type": "project",
+  "autoload": {
+      "psr-4": {
+        "App\\": "app/"
+      }
+  },
+  "require": {
+    "jenssegers/date": "^4.0",
+    "byjg/jwt-wrapper": "2.0.*"
+  }
+}

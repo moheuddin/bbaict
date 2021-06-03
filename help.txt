@@ -1,0 +1,19 @@
+npm install -g vue-cli
+vue init webpack-simple swapanbhai
+cd swapanbhai
+npm install
+npm run dev
+------------------
+https://router.vuejs.org/installation.html#vue-cli
+npm install vue-router
+Main.js================================
+import Vue from 'vue'
+import App from './App.vue'
+import VueRouter from 'vue-router'
+
+configure router:
+App.vue
+
+
+
+https://www.youtube.com/watch?v=wDajopOCV-4&list=PLZ8kLhUbDAhDM7SALr1BWJf9zSdrYL1f5&index=20
