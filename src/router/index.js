@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import VueRouter from  'vue-router'
+import VueRouter from 'vue-router'
 import Home from '../view/Home.vue'
 
 
@@ -7,9 +7,9 @@ import Login from '../view/Login.vue';
 import Register from '../view/Register.vue';
 import Profile from '../view/Profile.vue'
 import Program from '../view/Program.vue'
-import User from '../view/User.vue'
+//import User from '../view/User.vue'
 import Allusers from '../view/Allusers.vue'
-
+import store from '../store/index'
 
 Vue.use(VueRouter);
 
@@ -22,15 +22,24 @@ const routes = [
   {
     path: '/profile',
     name: 'profile',
-    component: Profile
+    component: Profile,
+    meta: {
+      requiresAuth: true
+    }
   },
   {
     path: '/register',
-    component: Register
+    component: Register,
+    meta: {
+      requiresAuth: true
+    }
   },
   {
     path: '/allusers',
-    component: Allusers
+    component: Allusers,
+    meta: {
+      requiresAuth: true
+    }
   },
   {
     path: '/login',
@@ -38,32 +47,34 @@ const routes = [
   },
   {
     path: '/program',
-    component: Program
+    component: Program,
+    meta: {
+      requiresAuth: true
+    }
   },
   {
     path: '/user',
-    component: User
+    component: Profile,
+    meta: {
+      requiresAuth: true
+    }
   },
 
 ]
 
 const router = new VueRouter({
   mode: 'history',
-  routes
+  base: __dirname,
+  routes,
 })
-/*
+
 router.beforeEach((to, from, next) => {
-  const publicPages = ['/login', '/'];
-  const authRequired = !publicPages.includes(to.path);
-  const loggedIn = localStorage.getItem('user');
+  const authenticatedUser = store.state.auth.status.loggedIn;
+  const requiresAuth = to.matched.some(record => record.meta.requiresAuth);
 
-  // try to access a restricted page + not logged in
-  if (authRequired && !loggedIn) {
-    return next('/login');
-  }
-
-  next();
+  // Check for protected route
+  if (requiresAuth && !authenticatedUser) next('login')
+  else next();
 });
-*/
 
 export default router
