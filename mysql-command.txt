@@ -1,0 +1,4 @@
+CREATE DATABASE program;
+USE program;
+GRANT ALL PRIVILEGES ON *.* TO 'program'@'localhost' IDENTIFIED BY 'Wifibba17?#'
+FLUSH PRIVILEGES;

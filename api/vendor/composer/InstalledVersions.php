@@ -24,13 +24,13 @@ class InstalledVersions
 private static $installed = array (
   'root' => 
   array (
-    'pretty_version' => '1.0.0+no-version-set',
-    'version' => '1.0.0.0',
+    'pretty_version' => 'dev-master',
+    'version' => 'dev-master',
     'aliases' => 
     array (
     ),
-    'reference' => NULL,
-    'name' => 'moheuddin/php-project',
+    'reference' => '0db08ad8bce4650dcfa8afe1536f17117b329b66',
+    'name' => 'byjg/jwt-wrapper-example',
   ),
   'versions' => 
   array (
@@ -42,6 +42,15 @@ private static $installed = array (
       array (
       ),
       'reference' => '6618613cd15fd31e473fc862b452882a677379dd',
+    ),
+    'byjg/jwt-wrapper-example' => 
+    array (
+      'pretty_version' => 'dev-master',
+      'version' => 'dev-master',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '0db08ad8bce4650dcfa8afe1536f17117b329b66',
     ),
     'firebase/php-jwt' => 
     array (
@@ -61,15 +70,6 @@ private static $installed = array (
       ),
       'reference' => '506f86096e0b512f9ece6ad0ccae62b03c125771',
     ),
-    'moheuddin/php-project' => 
-    array (
-      'pretty_version' => '1.0.0+no-version-set',
-      'version' => '1.0.0.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => NULL,
-    ),
     'nesbot/carbon' => 
     array (
       'pretty_version' => '2.48.1',
@@ -78,6 +78,15 @@ private static $installed = array (
       array (
       ),
       'reference' => '8d1f50f1436fb4b05e7127360483dd9c6e73da16',
+    ),
+    'rbdwllr/reallysimplejwt' => 
+    array (
+      'pretty_version' => '4.0.2',
+      'version' => '4.0.2.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'a292f6ed1fbecf243dd929245e05784a1228b24c',
     ),
     'symfony/deprecation-contracts' => 
     array (

@@ -15,5 +15,8 @@ configure router:
 App.vue
 
 
+webpack
+https://www.youtube.com/watch?v=TwQA6agwYoo&list=PLyrs5AgsUPcWRdsE_E6BuSOb09YVsKSL8
 
-https://www.youtube.com/watch?v=wDajopOCV-4&list=PLZ8kLhUbDAhDM7SALr1BWJf9zSdrYL1f5&index=20
+Slip file
+https://www.youtube.com/watch?v=2wSwhirkAbE&list=PLyrs5AgsUPcWRdsE_E6BuSOb09YVsKSL8&index=11

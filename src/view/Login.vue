@@ -53,7 +53,7 @@
 
 <script>
 import User from '../models/user';
-
+import config from '../../config';
 export default {
   name: 'Login',
   data() {

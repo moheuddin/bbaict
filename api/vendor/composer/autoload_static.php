@@ -4,12 +4,12 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInitbf2f44b9849173413d66d67c729e5129
+class ComposerStaticInitda1ddc9da07201a07b568d50773ad18f
 {
     public static $files = array (
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
-        'a4a119a56e50fbb293281d9a48007e0e' => __DIR__ . '/..' . '/symfony/polyfill-php80/bootstrap.php',
         '6e3fae29631ef280660b3cdad06f25a8' => __DIR__ . '/..' . '/symfony/deprecation-contracts/function.php',
+        'a4a119a56e50fbb293281d9a48007e0e' => __DIR__ . '/..' . '/symfony/polyfill-php80/bootstrap.php',
         'a1105708a18b76903365ca1c4aa61b02' => __DIR__ . '/..' . '/symfony/translation/Resources/functions.php',
     );
 
@@ -20,6 +20,10 @@ class ComposerStaticInitbf2f44b9849173413d66d67c729e5129
             'Symfony\\Polyfill\\Mbstring\\' => 26,
             'Symfony\\Contracts\\Translation\\' => 30,
             'Symfony\\Component\\Translation\\' => 30,
+        ),
+        'R' => 
+        array (
+            'ReallySimpleJWT\\' => 16,
         ),
         'J' => 
         array (
@@ -36,10 +40,6 @@ class ComposerStaticInitbf2f44b9849173413d66d67c729e5129
         'B' => 
         array (
             'ByJG\\Util\\' => 10,
-        ),
-        'A' => 
-        array (
-            'App\\' => 4,
         ),
     );
 
@@ -60,6 +60,10 @@ class ComposerStaticInitbf2f44b9849173413d66d67c729e5129
         array (
             0 => __DIR__ . '/..' . '/symfony/translation',
         ),
+        'ReallySimpleJWT\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/rbdwllr/reallysimplejwt/src',
+        ),
         'Jenssegers\\Date\\' => 
         array (
             0 => __DIR__ . '/..' . '/jenssegers/date/src',
@@ -76,10 +80,6 @@ class ComposerStaticInitbf2f44b9849173413d66d67c729e5129
         array (
             0 => __DIR__ . '/..' . '/byjg/jwt-wrapper/src',
         ),
-        'App\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/app',
-        ),
     );
 
     public static $classMap = array (
@@ -93,9 +93,9 @@ class ComposerStaticInitbf2f44b9849173413d66d67c729e5129
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInitbf2f44b9849173413d66d67c729e5129::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInitbf2f44b9849173413d66d67c729e5129::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInitbf2f44b9849173413d66d67c729e5129::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInitda1ddc9da07201a07b568d50773ad18f::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInitda1ddc9da07201a07b568d50773ad18f::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInitda1ddc9da07201a07b568d50773ad18f::$classMap;
 
         }, null, ClassLoader::class);
     }

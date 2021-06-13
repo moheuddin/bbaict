@@ -64,6 +64,7 @@
 </template>
 
 <script>
+import config from '../../config'
 import axios from "axios";
 //axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
 //axios.defaults.headers.post['Content-Type'] ='application/x-www-form-urlencoded';
@@ -111,7 +112,7 @@ export default {
     }
       axios({
         method: "post",
-        url: "http://bbaict.test/api/register.php",
+        url: config.API_URL+"register.php",
         data: formData,
         config: auth
 

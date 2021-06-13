@@ -91,23 +91,17 @@ class JwtWrapper
      */
     public function extractData($bearer = null)
     {
-      $jwtData=null;
         if (empty($bearer)) {
             $bearer = $this->getAuthorizationBearer();
         }
-        /*$jwtData = JWT::decode(
+
+        $jwtData = JWT::decode(
             $bearer,
             $this->jwtKey->getPublicKey(),
             [
                 $this->jwtKey->getAlghoritm()
             ]
-        );*/
-
-        $jwtData = JWT::decode($bearer,  $this->jwtKey->getPublicKey(), [$this->jwtKey->getAlghoritm()]);
-
-        if(!$jwtData){
-          throw new JwtWrapperException("Expired");
-        }
+        );
 
         if (isset($jwtData->iss) && $jwtData->iss != $this->serverName) {
             throw new JwtWrapperException("Issuer does not match");

@@ -1,6 +1,7 @@
 import axios from 'axios';
-
-const API_URL = 'http://bbaict.test/api/';
+import config from '../../config';
+//console.log(config.API_URL)
+const API_URL = config.API_URL;
 
 class AuthService {
   login(user) {

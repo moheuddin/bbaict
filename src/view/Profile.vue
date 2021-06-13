@@ -1,5 +1,6 @@
 <template>
   <div class="container">
+    <AdminMenu />
     <div class="card mb-4">
       <div class="card-body">
         <strong>{{currentUser.username}}</strong> Profile
@@ -8,7 +9,7 @@
     <template>
       <div id="profile">
         <form name="form" @submit.prevent="handleSave">
-          <div v-if="!successful">
+          <div >
             <div class="form-group">
               <label for="username">Username</label>
               <input
@@ -44,7 +45,7 @@
                 v-validate="'min:6|max:40'"
                 type="password"
                 class="form-control"
-                name="password"
+                name="password" ref="password"
               />
               <div
                 v-if="submitted && errors.has('password')"
@@ -52,7 +53,20 @@
               >{{errors.first('password')}}</div>
             </div>
             <div class="form-group">
-              <button class="btn btn-success">Save</button>
+              <label for="password">Password</label>
+              <input
+              class="form-control"
+              v-validate="'confirmed:password'" name="password_confirmation" type="password" placeholder=" " data-vv-as="password">
+              <div
+                v-if="submitted && errors.has('password_confirmation')"
+                class="alert-danger"
+              >{{errors.first('password_confirmation')}}</div>
+            </div>
+            <div class="form-group">
+              <button class="btn btn-primary" :disabled="loading">
+                <span v-show="loading" class="spinner-border spinner-border-sm"></span>
+                <span>Save</span>
+              </button>
             </div>
           </div>
         </form>
@@ -62,23 +76,31 @@
 </template>
 
 <script>
+import config from '../../config'
 import User from '../models/user';
+import  axios from 'axios'
+//import Swal from 'sweetalert2'
+import AdminMenu from '../view/components/Adminmenu.vue';
+
+
 export default {
   name: 'Profile',
+  components:{
+    AdminMenu
+  },
   data() {
     return {
       submitted: false,
       successful: false,
       message: '',
+      loading: false,
       formData: {
         username: "",
         email: "",
-        password:''
+        password:'',
+        confirm:''
       }
     };
-  },
-  created:{
-
   },
   computed: {
     currentUser() {
@@ -94,28 +116,50 @@ export default {
       return;
     }
     this.formData = this.$store.state.auth.user;
+
+    const loggeduser = JSON.parse(localStorage.getItem('user'));
+    if(loggeduser!=''){
+      this.token = loggeduser.jwt;
+    }
+    axios.defaults.headers.common['Authorization'] = `Bearer ${this.token}`
+
   },
   methods:{
     handleSave: function() {
       this.message = '';
       this.submitted = true;
+
+      let data = this.formData
       this.$validator.validate().then(isValid => {
-        if (isValid) {
-          this.regiser();
-          /*this.$store.dispatch('auth/register', this.user).then(
-            data => {
-              this.message = data.message;
-              this.successful = true;
-            },
-            error => {
-              this.message =
-                (error.response && error.response.data) ||
-                error.message ||
-                error.toString();
-              this.successful = false;
-            }
-          )*/
+        console.log(isValid)
+        //console.log(data)
+        if (!isValid) {
+          this.loading = false;
+          return;
         }
+        this.loading=true
+        axios.post(config.API_URL + 'profile.php', {
+          //headers: { Authorization: `Bearer ${token}` },
+             data
+
+        }).then((response) => {
+          //console.log(response);
+          //this.items.splice(idx, 1)
+          /*if(response.data.result=='updated'){
+            Swal.fire({
+              title: 'Success!',
+              text: 'User has been updated!',
+              icon: 'success',
+              confirmButtonText: 'Close'
+            })
+          }*/
+          this.loading=false;
+          //this.$validator.clean();
+          this.$validator.reset();
+
+
+        })
+
       });
     }
   }

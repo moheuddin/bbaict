@@ -1,16 +1,10 @@
 {
-  "name": "moheuddin/php-project",
-  "description": "A PHP project.",
-  "keywords": ["php", "program", "vue"],
+  "name": "byjg/jwt-wrapper-example",
+  "description": "Just an example of JWT Wrapper",
   "license": "MIT",
-  "type": "project",
-  "autoload": {
-      "psr-4": {
-        "App\\": "app/"
-      }
-  },
   "require": {
+    "byjg/jwt-wrapper": "2.0.*",
     "jenssegers/date": "^4.0",
-    "byjg/jwt-wrapper": "2.0.*"
+    "rbdwllr/reallysimplejwt": "^4.0"
   }
 }

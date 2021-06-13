@@ -7,7 +7,8 @@ const store = new Vuex.Store({
   state: {
     appname:"Bridges Division Daily Program",
     posts: [],
-    API_URL:'',
+    //API_URL:'',
+    globalVar: require('../../config'),
     loading: true,
     count:1,
     currentUser: {
